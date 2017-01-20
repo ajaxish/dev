@@ -9,7 +9,7 @@
 	<section>
 		<div id="divelement" style="border: solid black 0.1px; display: inline-block;">
 			<form id="formelement">
-				<textarea id="txtareaelemnt" cols="80" rows="8">
+				<textarea id="txtareaelemnt" >
 					
 				</textarea>
 				<br/>
@@ -21,6 +21,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			readysubmit();
+preparePage();
 		})
 	</script>
 	<script type="text/javascript">
@@ -33,6 +34,7 @@ function preparePage() {
 				document.getElementById("submit").style.display = "inline-block";
 		}
 	};
+
 		document.getElementById("submit").onclick = function() {
 			window.location.href = "https://www.google.com";
 			return false;
@@ -40,14 +42,15 @@ function preparePage() {
 		document.getElementById("chkbox").checked ="true";
 		document.getElementById("submit").style.display = "none";
 	}
-window.ready =  function() {
-	preparePage();
+//window.onload =  function() {
+	//preparePage();
 };
 //$(document).ready(function(){
   //$('#txtareaelemnt').click(function() { alert('clicked'); }); 
   //$('#txtareaelemnt').val('something');
   //$('#txtareaelemnt').trigger('click');
 //});
+
 $('#txtareaelemnt').on('keyup keypress', function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) { 
@@ -61,14 +64,4 @@ $('#txtareaelemnt').on('keyup keypress', function(e) {
           //return false;
         }
       });
-	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		function readysubmit(){
-			document.getElementById("submit").onclick=function(){
-			location.href="www.google.com";
-			}
-		}
-		window.ready =  function() {
-	preparePage();
 	</script>
