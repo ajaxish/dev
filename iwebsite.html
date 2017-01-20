@@ -5,6 +5,22 @@
 			location.href="www.google.com";
 			}
 		}
+		function preparePage() {
+	document.getElementById("chkbox").onclick = function() {
+		if (document.getElementById("chkbox").checked) {
+			document.getElementById("submit").style.display = "none";
+		} else {
+				document.getElementById("submit").style.display = "inline-block";
+		}
+	};
+
+		document.getElementById("submit").onclick = function() {
+			window.location.href = "https://www.google.com";
+			return false;
+		}
+		document.getElementById("chkbox").checked ="true";
+		document.getElementById("submit").style.display = "none";
+	}
 	</script>
 	<section>
 		<div id="divelement" style="border: solid black 0.1px; display: inline-block;">
