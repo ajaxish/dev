@@ -1,0 +1,164 @@
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+	<style>
+.connect-form form > ol {
+  list-style: none;
+}
+.connect-form form > ol > li {
+  position: relative;
+}
+.connect-form label {
+  position: absolute;
+  top: -1em;
+  left: 0.08em;
+  color: #aaaaaa;
+  z-index: -1;
+  font-size: 0.85em;
+  -moz-animation: float-labels 300ms none ease-out;
+  -webkit-animation: float-labels 300ms none ease-out;
+  animation: float-labels 300ms none ease-out;
+  -moz-animation-play-state: running !important;
+  -webkit-animation-play-state: running !important;
+  animation-play-state: running !important;
+}
+.connect-form input:not(.empty):focus + label {
+  color: #0099ff;
+}
+.connect-form input.empty + label {
+  top: 0.1em;
+  -moz-animation: none;
+  -webkit-animation: none;
+  animation: none;
+}
+@-moz-keyframes float-labels {
+  0% {
+    opacity: 1;
+    color: #aaa;
+    top: 0.1em;
+    font-size: 1.2em;
+  }
+  20% {
+    font-size: 1.2em;
+    opacity: 0;
+  }
+  30% {
+    top: 0.1em;
+  }
+  50% {
+    opacity: 0;
+    font-size: 0.85em;
+  }
+  100% {
+    top: -1em;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes float-labels {
+  0% {
+    opacity: 1;
+    color: #aaa;
+    top: 0.1em;
+    font-size: 1.2em;
+  }
+  20% {
+    font-size: 1.2em;
+    opacity: 0;
+  }
+  30% {
+    top: 0.1em;
+  }
+  50% {
+    opacity: 0;
+    font-size: 0.85em;
+  }
+  100% {
+    top: -1em;
+    opacity: 1;
+  }
+}
+@keyframes float-labels {
+  0% {
+    opacity: 1;
+    color: #aaa;
+    top: 0.1em;
+    font-size: 1.2em;
+  }
+  20% {
+    font-size: 1.2em;
+    opacity: 0;
+  }
+  30% {
+    top: 0.1em;
+  }
+  50% {
+    opacity: 0;
+    font-size: 0.85em;
+  }
+  100% {
+    top: -1em;
+    opacity: 1;
+  }
+}
+.connect-form {
+  margin-bottom: 3em;
+}
+.connect-form input {
+  font-size: 1.2em;
+}
+.connect-form input.empty + label {
+  font-size: 1.2em;
+}
+.connect-form form > ol {
+  list-style: none;
+  padding: 0px;
+}
+.connect-form form > ol > li {
+  position: relative;
+  margin: 1.2em 0;
+}
+.connect-form form {
+  margin-top: 2.5em;
+}
+.connect-form input {
+  padding: 0.1em 0em;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  margin: 0px;
+  background: none;
+  width: 100%;
+}
+.connect-form label {
+  font-weight: normal;
+}
+	</style>
+	<div class="connect-form">
+  <form>
+    <ol>
+      <li>
+        <input id="name" name="name"/>
+        <label for="name">Full name</label>
+      </li>
+      <li>
+        <input id="email" name="email"/>
+        <label for="email">Email</label>
+      </li>
+      <li>
+        <input id="confirm" name="confirm"/>
+        <label for="confirm">Confirm Email</label>
+      </li>
+      <li>
+        <input id="password" name="password" type="password"/>
+        <label for="password">Password</label>
+      </li>
+    </ol>
+  </form>
+</div>
+	<script>
+		/* Initialization */
+$("input:not([value]),input[value='']").addClass('empty');
+/* Input event handling */
+$('input').on('input keyup', function() {
+  $(this).toggleClass('empty', !Boolean($(this).val()));
+});
+	</script>
