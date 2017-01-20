@@ -1,0 +1,72 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function readysubmit(){
+			document.getElementById("submit").onclick=function(){
+			location.href="www.google.com";
+			}
+		}
+	</script>
+	<section>
+		<div id="divelement" style="border: solid black 0.1px; display: inline-block;">
+			<form id="formelement">
+				<textarea id="txtareaelemnt" cols="80" rows="8">
+					
+				</textarea>
+				<br/>
+				<input id="chkbox" type="checkbox" name="Pressentertosend">Press enter to send </input>
+				<button id="submit" name="Submit" >Submit</button>
+			</form>
+		</div>
+	</section>
+	<script type="text/javascript">
+		$(document).onload(function(){
+			readysubmit();
+		})
+	</script>
+	<script type="text/javascript">
+		// show and hide sections of a form
+function preparePage() {
+	document.getElementById("chkbox").onclick = function() {
+		if (document.getElementById("chkbox").checked) {
+			document.getElementById("submit").style.display = "none";
+		} else {
+				document.getElementById("submit").style.display = "inline-block";
+		}
+	};
+		document.getElementById("submit").onclick = function() {
+			window.location.href = "https://www.google.com";
+			return false;
+		}
+		document.getElementById("chkbox").checked ="true";
+		document.getElementById("submit").style.display = "none";
+	}
+window.onload =  function() {
+	preparePage();
+};
+//$(document).ready(function(){
+  //$('#txtareaelemnt').click(function() { alert('clicked'); }); 
+  //$('#txtareaelemnt').val('something');
+  //$('#txtareaelemnt').trigger('click');
+//});
+$('#txtareaelemnt').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) { 
+          
+          //alert(document.getElementById("chkbox"))
+          if (document.getElementById("chkbox").checked) {
+          	e.preventDefault();
+          	window.location.href = "https://www.google.com";
+      	}	
+          //alert("pressed enter!")
+          //return false;
+        }
+      });
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function readysubmit(){
+			document.getElementById("submit").onclick=function(){
+			location.href="www.google.com";
+			}
+		}
+	</script>
