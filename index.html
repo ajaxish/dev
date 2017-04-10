@@ -200,17 +200,13 @@ var ta = document.getElementById('contentdiv');
 var x = new XMLHttpRequest;
 x.open("GET", "about.html");
 x.onreadystatechange =function(){
-v.style.pointerEvents="auto"; 
-v.style.cursor="pointer";
 ta.innerHTML = x.responseText;
 }
 function func(){
-//x.abort();
-//x.open("GET", "about.html");
-//ta.innerHTML=x.responseText;
+x.open("GET", "about.html");
+ta.innerHTML=x.responseText;
 x.send();
-v.style.pointerEvents="none"; 
-v.style.cursor="default";
+x.abort();
 }
 
 if(v.addEventListener)
