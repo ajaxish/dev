@@ -198,15 +198,14 @@ setInterval(GetClock,1000);
 var v = document.getElementById("iabout");
 var ta = document.getElementById('contentdiv');		
 var x = new XMLHttpRequest;
-x.open("GET", "about.html");
-x.onreadystatechange =function(){
-ta.innerHTML = x.responseText;
+function funct(){
+	ta.innerHTML = x.responseText;	
 }
 function func(){
-x.open("GET", "about.html");
-ta.innerHTML=x.responseText;
-x.send();
 x.abort();
+x.open("GET", "about.html");
+x.onreadystatechange =funct();
+x.send();
 }
 
 if(v.addEventListener)
