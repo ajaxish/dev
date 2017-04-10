@@ -195,33 +195,22 @@ setInterval(GetClock,1000);
 		</footer>
 	</section>
 	<script type="text/javascript">
-		$("#ihome").click(function(){
-			$("#contentdiv").load('home.html');
-		});
-		$("#iabout").click(function(){
-			$("#contentdiv").load('about.html');
-		});
-		$("#ijoin").click(function(){
-			$("#contentdiv").load('join.html');
-		});
-		$("#icharter").click(function(){
-			$("#contentdiv").load('charter.html');
-		});
-		$("#iduties").click(function(){
-			$("#contentdiv").load('duties.html');
-		});
-		$("#isole").click(function(){
-			$("#contentdiv").load('solely.html');
-		});
-		$("#iconnect").click(function(){
-			$("#contentdiv").load('connect.html');
-		});
-		$("#ifeedback").click(function(){
-			$("#contentdiv").load('iwebsite.html');
-		});
-		$(document).ready( function(){
-			$("#contentdiv").load('home.html');
-		});
+var v = document.getElementById("about");
+var ta = document.getElementById('icontent');
+var x = new XMLHttpRequest;
+x.open("GET", "about.html");
+x.onreadystatechange =function(){
+ta.innerHTML = x.responseText;
+}
+function func(){
+x.send();
+}
+
+
+if(v.addEventListener)
+v.addEventListener("click", func, false);
+else if(v.attachEvent)
+v.attachEvent('onclick', func);
 	</script>
 </body>
 
