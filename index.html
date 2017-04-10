@@ -203,8 +203,8 @@ x.onreadystatechange =function(){
 ta.innerHTML = x.responseText;
 }
 function func(){
-x.send();
 x.abort();
+x.send();
 }
 
 if(v.addEventListener)
