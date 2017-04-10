@@ -201,12 +201,11 @@ var x = new XMLHttpRequest;
 x.open("GET", "about.html");
 x.onreadystatechange =function(){
 ta.innerHTML = x.responseText;
+x=null;
 }
 function func(){
 x.send();
-x=null;
 }
-
 
 if(v.addEventListener)
 v.addEventListener("click", func, false);
