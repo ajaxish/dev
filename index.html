@@ -201,9 +201,9 @@ var x = new XMLHttpRequest;
 x.open("GET", "about.html");
 x.onreadystatechange =function(){
 ta.innerHTML = x.responseText;
+x.abort();
 }
 function func(){
-x.abort();
 x.send();
 }
 
